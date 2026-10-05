@@ -1,7 +1,7 @@
 # Stack-Based Arithmetic Expression Evaluator
 
 **Student Name:** Daniel Michael Fofanah  
-**Student ID:** [905006072]  
+**Student ID:** 905006072  
 **Course:** Data Structures and Algorithms  
 **Faculty:** Faculty of Information & Communication Technology  
 **Institution:** Limkokwing University of Creative Technology  
