@@ -1,8 +1,13 @@
 # Stack-Based Arithmetic Expression Evaluator
 
-**Author:** Daniel Michael Fofanah  
+**Student Name:** Daniel Michael Fofanah  
+**Student ID:** [905006072]  
 **Course:** Data Structures and Algorithms  
-**Language:** Python 3.x  
+**Faculty:** Faculty of Information & Communication Technology  
+**Institution:** Limkokwing University of Creative Technology  
+**Date:** October 5 2026  
+
+---
 
 ## Overview
 This program evaluates multi-line mathematical infix expressions from `input.txt` and writes the calculated results to `output.txt`. It utilizes a custom LIFO `Stack` data structure, Dijkstra's Shunting-Yard Algorithm for infix-to-postfix conversion, and a stack-based postfix evaluator. Non-mathematical line separators (e.g., `-----`) are preserved in the output file.
@@ -14,11 +19,11 @@ This program evaluates multi-line mathematical infix expressions from `input.txt
 - `README.md`: System documentation and execution guide.
 
 ## Execution Screenshot
-![Execution Results](execution_screenshot.png.png)
+![Execution Results](execution_screenshot.png)
 
 ## How to Run
 1. Ensure Python 3.x is installed on your system.
 2. Place `main.py` and `input.txt` in the same directory.
-3. Open terminal in the directory and run:
+3. Open a terminal in the directory and run:
    ```bash
    python main.py
