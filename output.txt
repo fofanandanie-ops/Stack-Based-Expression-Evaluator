@@ -1,0 +1,8 @@
+11
+72
+-----
+100
+12.5
+-----
+5
+ERROR: Division by zero error.
