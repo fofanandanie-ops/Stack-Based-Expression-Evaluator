@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f3ee">
+  <meta name="description" content="Browse cars for sale in Car Parking Multiplayer.">
+  <title>Lot 09 — CPM Garage</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="Lot 09 home">
+      <span class="brand-mark">09</span>
+      <span>LOT<span class="brand-light">09</span><small>THE CPM GARAGE</small></span>
+    </a>
+    <nav class="top-actions" aria-label="Main navigation">
+      <a class="nav-link" href="#inventory">Inventory</a>
+      <button class="button button-dark" id="admin-button" type="button">Admin login <span aria-hidden="true">↗</span></button>
+      <button class="button button-dark hidden" id="logout-button" type="button">Log out</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="live-dot"></span> PLAYER-OWNED · CAR PARKING MULTIPLAYER</p>
+        <h1>Your next<br>garage story<span class="accent">.</span></h1>
+        <p class="hero-description">Hand-picked rides, ready for their next owner.<br>Find your build. Make it yours.</p>
+        <a class="button button-red" href="#inventory">Explore the lot <span aria-hidden="true">↓</span></a>
+      </div>
+      <div class="hero-art" aria-label="Sports car illustration">
+        <div class="art-grid"></div>
+        <div class="art-label art-label-top">EST. IN THE LOBBY <span>2024</span></div>
+        <div class="art-sun"></div>
+        <svg class="car-illustration" viewBox="0 0 720 300" role="img" aria-label="Illustration of a red sports car">
+          <defs>
+            <linearGradient id="carPaint" x1="0" x2="0.9" y1="0" y2="1">
+              <stop offset="0" stop-color="#fc6452"/>
+              <stop offset="1" stop-color="#b82620"/>
+            </linearGradient>
+            <linearGradient id="glass" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0" stop-color="#384447"/>
+              <stop offset="1" stop-color="#111a1d"/>
+            </linearGradient>
+          </defs>
+          <ellipse cx="364" cy="247" rx="264" ry="18" fill="#171919" opacity=".17"/>
+          <path d="M85 210l22-42c8-16 22-27 41-32l117-31 66-56c14-12 29-18 49-18h94c18 0 34 7 47 20l67 67 56 17c18 6 31 20 36 39l8 36-23 18H99z" fill="url(#carPaint)"/>
+          <path d="M280 101l62-52c10-8 22-13 38-13h42v66zM438 36h36c14 0 26 5 36 16l48 49H438z" fill="url(#glass)"/>
+          <path d="M422 36v66" stroke="#bf3229" stroke-width="5"/>
+          <path d="M143 164l83-4 29 19H119zM581 157l46 14 8 21h-43z" fill="#ffd99f"/>
+          <path d="M92 210h574l-17 24H112z" fill="#242929"/>
+          <path d="M264 205h226" stroke="#ffb2a6" stroke-width="3" opacity=".65"/>
+          <circle cx="219" cy="222" r="43" fill="#191d1e"/>
+          <circle cx="219" cy="222" r="25" fill="#929592"/>
+          <circle cx="219" cy="222" r="13" fill="#353a3a"/>
+          <circle cx="553" cy="222" r="43" fill="#191d1e"/>
+          <circle cx="553" cy="222" r="25" fill="#929592"/>
+          <circle cx="553" cy="222" r="13" fill="#353a3a"/>
+          <path d="M328 130h101" stroke="#ff9083" stroke-width="2" opacity=".55"/>
+        </svg>
+        <div class="art-label art-label-bottom"><span>01 / YOUR NEXT RIDE</span><span>CPM · ONLINE</span></div>
+      </div>
+      <div class="hero-index">GARAGE<br>№ 001</div>
+    </section>
+
+    <section class="inventory" id="inventory">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">THE CURRENT LINEUP</p>
+          <h2>On the lot<span class="accent">.</span></h2>
+        </div>
+        <div class="inventory-meta"><span id="listing-count">0</span> CARS <span class="meta-divider"></span> UPDATED REGULARLY</div>
+      </div>
+
+      <div class="admin-panel hidden" id="admin-panel">
+        <div class="admin-heading">
+          <div><p class="eyebrow">GARAGE CONTROL</p><h3>Your listings</h3></div>
+          <button class="button button-red" id="add-car-button" type="button">+ Add a car</button>
+        </div>
+        <p class="admin-note">Changes save to this website and appear in the public lineup.</p>
+      </div>
+
+      <div class="filters" role="group" aria-label="Filter cars">
+        <button class="filter active" data-filter="all" type="button">All cars</button>
+        <button class="filter" data-filter="available" type="button">Available</button>
+        <button class="filter" data-filter="sold" type="button">Sold</button>
+      </div>
+      <div class="car-grid" id="car-grid" aria-live="polite">
+        <div class="loading">Opening the garage<span>...</span></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a class="brand footer-brand" href="/">
+      <span class="brand-mark">09</span>
+      <span>LOT<span class="brand-light">09</span><small>THE CPM GARAGE</small></span>
+    </a>
+    <p>PLAYER-OWNED. PLAYER-DRIVEN.<br>NOT AFFILIATED WITH CAR PARKING MULTIPLAYER.</p>
+    <a class="back-top" href="#">BACK TO TOP ↑</a>
+  </footer>
+
+  <dialog class="dialog" id="login-dialog">
+    <form class="dialog-card" id="login-form">
+      <button class="close-button" type="button" data-close="login-dialog" aria-label="Close">×</button>
+      <p class="eyebrow">OWNER ACCESS</p>
+      <h2>Welcome back<span class="accent">.</span></h2>
+      <p class="dialog-description">Sign in to manage your garage listings.</p>
+      <label for="admin-password">Admin password</label>
+      <input id="admin-password" name="password" type="password" autocomplete="current-password" required>
+      <p class="form-error" id="login-error" role="alert"></p>
+      <button class="button button-red button-full" type="submit">Enter the garage <span>↗</span></button>
+    </form>
+  </dialog>
+
+  <dialog class="dialog" id="car-dialog">
+    <form class="dialog-card" id="car-form">
+      <button class="close-button" type="button" data-close="car-dialog" aria-label="Close">×</button>
+      <p class="eyebrow">GARAGE CONTROL</p>
+      <h2 id="car-form-title">Add a car<span class="accent">.</span></h2>
+      <input id="car-id" type="hidden">
+      <label for="car-title">Listing title <span class="required">*</span></label>
+      <input id="car-title" name="title" maxlength="100" placeholder="e.g. Midnight runner" required>
+      <label for="car-model">Car / model <span class="required">*</span></label>
+      <input id="car-model" name="model" maxlength="100" placeholder="e.g. Nissan Skyline R34" required>
+      <label for="car-price">Price <span class="required">*</span></label>
+      <input id="car-price" name="price" maxlength="40" placeholder="e.g. 2,500,000 CPM cash" required>
+      <label for="car-image-url">Photo URL</label>
+      <input id="car-image-url" name="image_url" type="url" placeholder="https://...">
+      <p class="field-hint">Paste a direct image link (HTTPS recommended).</p>
+      <label for="car-description">Details</label>
+      <textarea id="car-description" name="description" rows="3" maxlength="2000" placeholder="Tell buyers about the build, upgrades, and condition..."></textarea>
+      <label for="car-contact">How to reach you in-game</label>
+      <input id="car-contact" name="contact" maxlength="200" placeholder="Player name, ID, or Discord">
+      <label for="car-status">Listing status</label>
+      <select id="car-status" name="status">
+        <option value="available">Available</option>
+        <option value="sold">Sold</option>
+      </select>
+      <p class="form-error" id="car-error" role="alert"></p>
+      <button class="button button-red button-full" type="submit" id="save-car-button">Publish listing <span>↗</span></button>
+    </form>
+  </dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
