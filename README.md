@@ -1,6 +1,7 @@
 # Stack-Based Expression Evaluator
 
-**Student Name:** Daniel Michael Fofanah  
+**Student Name:** Daniel Michael Fofanah
+**ID** 905006072
 **Course:** Data Structures & Algorithms  
 **Faculty:** Faculty of Information & Communication Technology (FICT)  
 **Institution:** Limkokwing University of Creative Technology  
