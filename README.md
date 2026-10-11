@@ -1,5 +1,13 @@
 # Stack-Based Expression Evaluator
 
+**Student Name:** Daniel Michael Fofanah  
+**Course:** Data Structures & Algorithms  
+**Faculty:** Faculty of Information & Communication Technology (FICT)  
+**Institution:** Limkokwing University of Creative Technology  
+
+---
+# Stack-Based Expression Evaluator
+
 A Python implementation of **Dijkstra's Shunting-Yard Algorithm** and a custom **Stack Data Structure** designed to parse, evaluate, and batch-process mathematical infix expressions from external files.
 
 ## Project Structure
